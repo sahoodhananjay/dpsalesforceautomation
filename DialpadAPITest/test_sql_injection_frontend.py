@@ -29,13 +29,7 @@ sql_injection_list = [
                      '(609) 201-3445 AND%201=1%23'
                      ]
 
-#dialpad123' AND 1=1#
-#dialpad123' OR 1=1#
-#dialpad123' AND 89=89#
-#dialpad123' OR 89=89#
-#dialpad123'+AND+1=1#
-#dialpad123' aNd 1=1#
-#dialpad123%27%20AND%201=1%23
+
 
 class TestSQL_Injection_Frontend(unittest.TestCase):
 

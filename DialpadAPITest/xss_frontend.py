@@ -47,16 +47,16 @@ class XSS_Frontend:
         print("Test Case1: XSS Attack via SMS")
         pass_flag = 0
         nativeapp_driver.refresh()
-        #nativeapp_driver = webdriver.Chrome('./chromedriver')
-        #nativeapp_driver.get(self.url)
-        #print(nativeapp_driver.title)
-        #google_user = nativeapp_driver.find_element_by_id("google-login-button").click()
-        #user_email = nativeapp_driver.find_element_by_id("identifierId").send_keys(admin_user)
-        #next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
-        #time.sleep(5)
-        #user_pass = nativeapp_driver.find_element_by_class_name("whsOnd.zHQkBf").send_keys(admin_pass)
-        #time.sleep(5)
-        #next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
+        nativeapp_driver = webdriver.Chrome('./chromedriver')
+        nativeapp_driver.get(self.url)
+        print(nativeapp_driver.title)
+        google_user = nativeapp_driver.find_element_by_id("google-login-button").click()
+        user_email = nativeapp_driver.find_element_by_id("identifierId").send_keys(admin_user)
+        next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
+        time.sleep(5)
+        user_pass = nativeapp_driver.find_element_by_class_name("whsOnd.zHQkBf").send_keys(admin_pass)
+        time.sleep(5)
+        next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
         time.sleep(10)
         contact_button = nativeapp_driver.find_element_by_xpath("//*[@id=\"LeftbarSection__listContainerId3\"]/li[1]/a/p/span").click()
         time.sleep(5)
@@ -69,9 +69,9 @@ class XSS_Frontend:
             try:
                 WebDriverWait(nativeapp_driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="alert"]')))
 
-                # alert = nativeapp_driver.switch_to.alert
-                # alert.accept()
-                # time.sleep(10)
+                alert = nativeapp_driver.switch_to.alert
+                alert.accept()
+                time.sleep(10)
                 alert = nativeapp_driver.find_element_by_id("alert")
                 print("alert accepted", alert.text)
                 status_code, json_content = self.check_for_message()
@@ -95,16 +95,16 @@ class XSS_Frontend:
         print("Test Case2: XSS Attack via Contact Edit")
         nativeapp_driver.refresh()
         pass_flag = 0
-        #nativeapp_driver = webdriver.Chrome('./chromedriver')
-        #nativeapp_driver.get(self.url)
-        #print(nativeapp_driver.title)
-        #google_user = nativeapp_driver.find_element_by_id("google-login-button").click()
-        #user_email = nativeapp_driver.find_element_by_id("identifierId").send_keys(admin_user)
-        #next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
-        #time.sleep(5)
-        #user_pass = nativeapp_driver.find_element_by_class_name("whsOnd.zHQkBf").send_keys(admin_pass)
-        #time.sleep(5)
-        #next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
+        nativeapp_driver = webdriver.Chrome('./chromedriver')
+        nativeapp_driver.get(self.url)
+        print(nativeapp_driver.title)
+        google_user = nativeapp_driver.find_element_by_id("google-login-button").click()
+        user_email = nativeapp_driver.find_element_by_id("identifierId").send_keys(admin_user)
+        next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
+        time.sleep(5)
+        user_pass = nativeapp_driver.find_element_by_class_name("whsOnd.zHQkBf").send_keys(admin_pass)
+        time.sleep(5)
+        next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
         time.sleep(10)
         contact_button = nativeapp_driver.find_element_by_xpath(
             "//*[@id=\"LeftbarSection__listContainerId3\"]/li[1]/a/p/span").click()
@@ -139,9 +139,9 @@ class XSS_Frontend:
                 WebDriverWait(nativeapp_driver, 5).until(
                     EC.presence_of_element_located((By.XPATH, '//*[@id="alert"]')))
 
-                # alert = nativeapp_driver.switch_to.alert
-                # alert.accept()
-                # time.sleep(10)
+                alert = nativeapp_driver.switch_to.alert
+                alert.accept()
+                time.sleep(10)
                 alert = nativeapp_driver.find_element_by_id("alert")
                 print("alert accepted", alert.text)
                 print("alert accepted")
@@ -173,16 +173,16 @@ class XSS_Frontend:
         print("Test Case3: XSS Attack via Search")
         nativeapp_driver.refresh()
         pass_flag = 0
-        #nativeapp_driver = webdriver.Chrome('./chromedriver')
-        #nativeapp_driver.get(self.url)
-        #print(nativeapp_driver.title)
-        #google_user = nativeapp_driver.find_element_by_id("google-login-button").click()
-        #user_email = nativeapp_driver.find_element_by_id("identifierId").send_keys(admin_user)
-        #next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
-        #time.sleep(5)
-        #user_pass = nativeapp_driver.find_element_by_class_name("whsOnd.zHQkBf").send_keys(admin_pass)
-        #time.sleep(5)
-        #next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
+        nativeapp_driver = webdriver.Chrome('./chromedriver')
+        nativeapp_driver.get(self.url)
+        print(nativeapp_driver.title)
+        google_user = nativeapp_driver.find_element_by_id("google-login-button").click()
+        user_email = nativeapp_driver.find_element_by_id("identifierId").send_keys(admin_user)
+        next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
+        time.sleep(5)
+        user_pass = nativeapp_driver.find_element_by_class_name("whsOnd.zHQkBf").send_keys(admin_pass)
+        time.sleep(5)
+        next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
         time.sleep(10)
         contact_button = nativeapp_driver.find_element_by_xpath(
             "//*[@id=\"LeftbarSection__listContainerId3\"]/li[1]/a/p/span").click()
@@ -202,9 +202,9 @@ class XSS_Frontend:
                 WebDriverWait(nativeapp_driver, 5).until(
                     EC.presence_of_element_located((By.XPATH, '//*[@id="alert"]')))
 
-                # alert = nativeapp_driver.switch_to.alert
-                # alert.accept()
-                # time.sleep(10)
+                alert = nativeapp_driver.switch_to.alert
+                alert.accept()
+                time.sleep(10)
                 alert = nativeapp_driver.find_element_by_id("alert")
                 print("alert accepted", alert.text)
                 print("alert accepted")
@@ -228,16 +228,16 @@ class XSS_Frontend:
         print("Test Case4: XSS Attack via Dial")
         nativeapp_driver.refresh()
         pass_flag = 0
-        #nativeapp_driver = webdriver.Chrome('./chromedriver')
-        #nativeapp_driver.get(self.url)
-        #print(nativeapp_driver.title)
-        #google_user = nativeapp_driver.find_element_by_id("google-login-button").click()
-        #user_email = nativeapp_driver.find_element_by_id("identifierId").send_keys(admin_user)
-        #next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
-        #time.sleep(5)
-        #user_pass = nativeapp_driver.find_element_by_class_name("whsOnd.zHQkBf").send_keys(admin_pass)
-        #time.sleep(5)
-        #next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
+        nativeapp_driver = webdriver.Chrome('./chromedriver')
+        nativeapp_driver.get(self.url)
+        print(nativeapp_driver.title)
+        google_user = nativeapp_driver.find_element_by_id("google-login-button").click()
+        user_email = nativeapp_driver.find_element_by_id("identifierId").send_keys(admin_user)
+        next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
+        time.sleep(5)
+        user_pass = nativeapp_driver.find_element_by_class_name("whsOnd.zHQkBf").send_keys(admin_pass)
+        time.sleep(5)
+        next_button = nativeapp_driver.find_element_by_class_name("VfPpkd-RLmnJb").click()
         time.sleep(10)
         contact_button = nativeapp_driver.find_element_by_xpath(
             "//*[@id=\"LeftbarSection__listContainerId3\"]/li[1]/a/p/span").click()
@@ -257,9 +257,9 @@ class XSS_Frontend:
                 WebDriverWait(nativeapp_driver, 5).until(EC.presence_of_element_located((By.XPATH,'//*[@id="alert"]')))
 
 
-                #alert = nativeapp_driver.switch_to.alert
-                #alert.accept()
-                #time.sleep(10)
+                alert = nativeapp_driver.switch_to.alert
+                alert.accept()
+                time.sleep(10)
                 alert = nativeapp_driver.find_element_by_id("alert")
                 print("alert accepted",alert.text)
                 print("XSS Security: {}: Fail".format(counter))
@@ -308,9 +308,9 @@ class XSS_Frontend:
                 WebDriverWait(nativeapp_driver, 5).until(EC.presence_of_element_located((By.XPATH,'//*[@id="alert"]')))
 
 
-                #alert = nativeapp_driver.switch_to.alert
-                #alert.accept()
-                #time.sleep(10)
+                alert = nativeapp_driver.switch_to.alert
+                alert.accept()
+                time.sleep(10)
                 alert = nativeapp_driver.find_element_by_id("alert")
                 print("alert accepted",alert.text)
                 print("XSS Security: {}: Fail".format(counter))
