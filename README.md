@@ -1,6 +1,7 @@
 # dpsalesforceautomation
 
-This repository is a collection of automated test scripts tailored for Salesforce applications. The scripts are designed to capture edge cases and complex user scenarios that are difficult to test manually. The suite enhances test coverage, improves reliability, and ensures the stability of mission-critical workflows in Salesforce environments.
+This repository is a collection of automated test scripts tailored for Dialpad integration with Salesforce. The scripts are designed to capture edge cases and complex user scenarios that are difficult to test manually. The suite enhances test coverage, improves reliability, and ensures the stability of mission-critical workflows in Salesforce environments.
+
 
 **Key Features:**
 
@@ -9,7 +10,17 @@ This repository is a collection of automated test scripts tailored for Salesforc
 - Scalable and maintainable test architecture
 - Integration-ready with CI/CD pipelines
 
-**Salesforce Features:**
+**Dialpad Feature Test**
+1. Blocked Numbers Public APIs
+2. CallCenter Public APIs
+3. Screenpop Public APIs
+4. User number Public APIs
+5. SQL Injection in Dialpad Webapp
+6. XSS threat validation of Dialpad Webapp
+
+Usage: pytest .\test_user_number.py -s -v -m quicktest
+
+**Salesforce Features Test:**
 
 1. Dialpad Call Logging:
    
