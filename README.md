@@ -12,7 +12,9 @@ This repository is a collection of automated test scripts tailored for Salesforc
 **Salesforce Features:**
 
 1. Dialpad Call Logging:
+   
 Jira: https://dialpad.atlassian.net/browse/DP-98062
+
 Usage: pytest .\test_SF_DCL_TASK_Mapping.py -s -v -m quicktest
 
 DP-133459 was reported based on test scenarios captured in SF_DCL_TASK_Mapping
