@@ -1,0 +1,73 @@
+scenarios:
+    restapi-perf-test-crud:
+        variables:
+            apikey: 'ULLc7YuA4S47aCKzKufM5NbBZr8jgqgvjJLDrwHfZjSQYwBJ2DGxsexzEVNVevsMvxTZwLn5cLA7mTT95HZhS7HhQq4M2H4yUhg9'
+        
+        data-sources:
+            - path: 'rest_crud_params.csv'
+              delimiter: ','
+              quoted: false
+              encoding: "utf-8"
+              loop: true
+              variable-names: email,license,office_id,first_name,last_name,job_title
+              random-order: false              
+        retrieve-resources: false
+        requests:
+            - url: 'https://dialpadbeta.com/api/v2/users?apikey=${apikey}'
+              method: POST
+              label: 'Create Users'
+              body: 
+                email: ${email}
+                license: ${license}
+                office_id: "5594532661428224"
+                auto_assign: false
+                
+              assert:
+              - contains:
+                - 200
+                subject: http-code
+                assume-success: true
+              extract-jsonpath:
+                status_code: $.meta.code
+                id:
+                    jsonpath: $.id
+                    default: NOT_FOUND
+                    scope: all               
+                                  
+                
+              headers:
+                Content-Type: application/json
+             
+            - if: '"${id}" != "NOT_FOUND"'
+              then:
+                - url: 'https://dialpadbeta.com/api/v2/users/${id}?apikey=ULLc7YuA4S47aCKzKufM5NbBZr8jgqgvjJLDrwHfZjSQYwBJ2DGxsexzEVNVevsMvxTZwLn5cLA7mTT95HZhS7HhQq4M2H4yUhg9'
+                  method: GET 
+                  label: 'Fetch Users'              
+                    
+                  headers:
+                    Content-Type: application/json
+                
+            - if: '"${id}" != "NOT_FOUND"'
+              then:
+                - url: 'https://dialpadbeta.com/api/v2/users/${id}?apikey=ULLc7YuA4S47aCKzKufM5NbBZr8jgqgvjJLDrwHfZjSQYwBJ2DGxsexzEVNVevsMvxTZwLn5cLA7mTT95HZhS7HhQq4M2H4yUhg9'
+                  method: PATCH   
+                  label: 'Update Users'
+                  body: 
+                    first_name: ${first_name}
+                    last_name: ${last_name}
+                    job_title: ${job_title}
+                                  
+                    
+                  headers:
+                    Content-Type: application/json
+                
+            - if: '"${id}" != "NOT_FOUND"'
+              then:
+                - url: 'https://dialpadbeta.com/api/v2/users/${id}?apikey=ULLc7YuA4S47aCKzKufM5NbBZr8jgqgvjJLDrwHfZjSQYwBJ2DGxsexzEVNVevsMvxTZwLn5cLA7mTT95HZhS7HhQq4M2H4yUhg9'
+                  method: DELETE 
+                  label: 'Delete Users'              
+                    
+                  headers:
+                    Content-Type: application/json
+                
+            

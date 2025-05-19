@@ -1,0 +1,12 @@
+execution:  
+    - executor: jmeter  
+      concurrency: 
+        local: 1
+        cloud: 5
+      ramp-up: 1m
+      hold-for: 10m
+      #iterations: 2
+      locations:
+        us-west-1:1
+        us-east-1:2
+      scenario: restapi-perf-test-crud
